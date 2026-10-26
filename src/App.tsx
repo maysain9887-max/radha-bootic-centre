@@ -188,14 +188,14 @@ const DraggableFloatingWidget: React.FC<DraggableFloatingWidgetProps> = ({
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerUp}
       className={`select-none cursor-grab active:cursor-grabbing ${
-        !position ? 'bottom-3 sm:bottom-6 right-2.5 sm:right-6' : ''
+        !position ? 'bottom-5 sm:bottom-8 right-2.5 sm:right-6' : ''
       }`}
       title="Drag to reposition Radha AI anywhere on screen"
     >
       <button
         type="button"
         aria-label="Open Radha AI Queries"
-        className={`btn-shimmer group relative flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-2.5 sm:py-3.5 rounded-2xl bg-gradient-to-r from-[#0F4C3F] via-[#145a4a] to-[#0F4C3F] hover:from-[#0A382E] hover:to-[#0F4C3F] text-white shadow-2xl hover:shadow-[#0F4C3F]/40 border border-[#D4AF37]/60 cursor-grab active:cursor-grabbing transition-all ${
+        className={`btn-shimmer group relative flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-2.5 sm:py-3.5 rounded-2xl bg-gradient-to-r from-[#0F4C3F] via-[#145a4a] to-[#0F4C3F] hover:from-[#0A382E] hover:to-[#0F4C3F] text-white shadow-2xl hover:shadow-[#0F4C3F]/40 border border-[#D4AF37]/60 cursor-grab active:cursor-grabbing transition-all -translate-y-2 ${
           isDragging ? 'scale-105 shadow-2xl ring-2 ring-[#D4AF37]' : ''
         }`}
       >
