@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "Radha Bootic Centre",
+  "short_name": "RadhaBootic",
+  "description": "Ladies Tailoring & Stitching boutique specializing in women's & girls' fashion, designer blouses, suits, lehengas, and custom embroidery.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0F4C3F",
+  "background_color": "#FFF8F0",
+  "icons": [
+    {
+      "src": "/assets/aistudio/logo_3fe417b7.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/aistudio/logo_3fe417b7.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

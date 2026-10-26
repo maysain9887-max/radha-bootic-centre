@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Noto Sans Devanagari', Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', 'Noto Sans Devanagari', Georgia, serif;
+  }
+}
+
+/* Keyframe animations for subtle boutique motion */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-modal-in {
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Gold Gradient Text Utility */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #C5A028 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button Shimmer Hover Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  transition: transform 0.75s ease;
+}
+.btn-shimmer:hover::after {
+  transform: translateX(300%) skewX(-20deg);
+}
+
+/* Custom delicate boutique scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #0F4C3F40;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0F4C3F80;
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 #E91E63;
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: 2px 0 #D4AF37;
+  animation: glitch-anim2 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip-path: polygon(0 2%, 100% 2%, 100% 8%, 0 8%);
+    transform: translate(-2px, -1px);
+  }
+  10% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 22%, 0 22%);
+    transform: translate(2px, 1px);
+  }
+  20% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 35%, 0 35%);
+    transform: translate(-1px, 2px);
+  }
+  30% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+    transform: translate(1px, -2px);
+  }
+  40% {
+    clip-path: polygon(0 58%, 100% 58%, 100% 64%, 0 64%);
+    transform: translate(-2px, 1px);
+  }
+  50% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 76%, 0 76%);
+    transform: translate(2px, -1px);
+  }
+  60% {
+    clip-path: polygon(0 82%, 100% 82%, 100% 88%, 0 88%);
+    transform: translate(-1px, 1px);
+  }
+  70% {
+    clip-path: polygon(0 35%, 100% 35%, 100% 42%, 0 42%);
+    transform: translate(2px, 1px);
+  }
+  80% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 66%, 0 66%);
+    transform: translate(-1px, -1px);
+  }
+  90% {
+    clip-path: polygon(0 25%, 100% 25%, 100% 31%, 0 31%);
+    transform: translate(1px, 2px);
+  }
+  100% {
+    clip-path: polygon(0 90%, 100% 90%, 100% 98%, 0 98%);
+    transform: translate(-2px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip-path: polygon(0 12%, 100% 12%, 100% 18%, 0 18%);
+    transform: translate(2px, 1px);
+  }
+  15% {
+    clip-path: polygon(0 32%, 100% 32%, 100% 38%, 0 38%);
+    transform: translate(-2px, -1px);
+  }
+  30% {
+    clip-path: polygon(0 52%, 100% 52%, 100% 58%, 0 58%);
+    transform: translate(1px, 2px);
+  }
+  45% {
+    clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+    transform: translate(-1px, -2px);
+  }
+  60% {
+    clip-path: polygon(0 22%, 100% 22%, 100% 28%, 0 28%);
+    transform: translate(2px, -1px);
+  }
+  75% {
+    clip-path: polygon(0 62%, 100% 62%, 100% 68%, 0 68%);
+    transform: translate(-2px, 1px);
+  }
+  90% {
+    clip-path: polygon(0 82%, 100% 82%, 100% 88%, 0 88%);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 10%, 0 10%);
+    transform: translate(-1px, 2px);
+  }
+}
+
+
